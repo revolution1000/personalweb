@@ -1,6 +1,6 @@
 baseURL = "https://revolution1000.github.io/personalweb/"
 languageCode = "en-us"
-title = "歌未竟"
+title = "寻子雄"
 theme = "ananke"
 
 [taxonomies]
@@ -13,7 +13,7 @@ url = "/categories/economy/"
 weight = 1
 
 [[menu.main]]
-name = "Philosophy"
+name = "Natural Philosophy"
 url = "/categories/philosophy/"
 weight = 2
 
@@ -23,8 +23,8 @@ url = "/posts/"
 weight = 3
 
 [params]
-author = "Your Name"
-description = "Notes on Mathematics and Physics"
+author = "Xun Zixiong"
+description = "Personal Website"
 
 show_reading_time = true
 show_post_nav_links = true
