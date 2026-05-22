@@ -1,0 +1,36 @@
+name: Deploy Hugo site
+
+on:
+  push:
+    branches: ["main"]
+
+# 1. 必须显式声明权限，否则 Actions 没有权限向你的仓库写入 gh-pages 分支
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 2. 如果你的主题是作为 submodule 引入的，必须加上这一行，否则云端拉不到主题文件
+          submodules: true  
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest' # 建议用 latest，或者指定较新的版本
+          extended: true
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

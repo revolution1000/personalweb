@@ -1,0 +1,32 @@
+baseURL = "https://revolution1000.github.io/myblog/"
+languageCode = "en-us"
+title = "歌未竟"
+theme = "ananke"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[[menu.main]]
+name = "Economy"
+url = "/categories/economy/"
+weight = 1
+
+[[menu.main]]
+name = "Philosophy"
+url = "/categories/philosophy/"
+weight = 2
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 3
+
+[params]
+author = "Your Name"
+description = "Notes on Mathematics and Physics"
+
+show_reading_time = true
+show_post_nav_links = true
+
+background_color_class = "bg-black"
